@@ -1,0 +1,40 @@
+# EthBridge
+**
+
+
+## Table of contents:
+- [Functions:](#functions)
+  - [`constructor(address _token)` (public) ](#ethbridge-constructor-address-)
+  - [`sendTokens(address _to, uint256 _amount, bytes _signature)` (external) ](#ethbridge-sendtokens-address-uint256-bytes-)
+  - [`unlockTokens(address _from, address _to, uint256 _amount, uint256 BSCTransactionId, bytes _signature)` (external) ](#ethbridge-unlocktokens-address-address-uint256-uint256-bytes-)
+
+
+## Functions <a name="functions"></a>
+
+### `constructor(address _token)` (public) <a name="ethbridge-constructor-address-"></a>
+
+
+### `sendTokens(address _to, uint256 _amount, bytes _signature)` (external) <a name="ethbridge-sendtokens-address-uint256-bytes-"></a>
+
+*Description*: This function is called in order to send tokens from Ethereum to BSC
+        @notice Amount of tokens must be approved to contract before calling this function
+        @notice If function call is successful, an event is emitted and bridge API
+        sends tokens on BSC
+        @notice Can be called by anyone
+        @param _to A receiver address on Binance Smart Chain
+        @param _amount Amount of tokens to lock on Ethereum and mint on BSC
+        @param _signature A message, signed by sender, required in order to make transaction
+        secure
+
+### `unlockTokens(address _from, address _to, uint256 _amount, uint256 BSCTransactionId, bytes _signature)` (external) <a name="ethbridge-unlocktokens-address-address-uint256-uint256-bytes-"></a>
+
+*Description*: This function can be called only by Bridge API
+        @notice Once an event is emitted on BSC, pointing that transaction is requested,
+        some amount of tokens are burned on BSC and unlocked on Ethereum
+        @param _from An address on BSC which sent a transaction. Required in order to check
+        that transaction is valid
+        @param _to A receiver address on Ethereum
+        @param _amount Amount of tokens to be unlocked
+        @param  BSCTransactionId Transaction nonce, required to check that transaction is valid
+        @param _signature A message, signed by sender, required in order to make transaction
+        secure

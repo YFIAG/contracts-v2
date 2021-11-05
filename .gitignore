@@ -1,0 +1,45 @@
+# dependencies
+node_modules/
+package-lock.json
+
+# production
+build/
+.env
+
+# misc
+.idea/
+.vscode/
+npm-debug.log
+.DS_Store
+/.coverage_contracts
+/.coverage_artifacts
+/coverage
+/coverage.json
+migrations/base/options.js
+config.json
+scripts/config.json
+Flattener/
+json_inputs
+
+# Standard and test contracts
+Address.json
+Context.json
+ERC20.json
+ERC20Mock.json
+IController.json
+IDelegatedVault.json
+IERC20.json
+IGovernance.json
+IOneSplitAudit.json
+IProxy.json
+IStrategy.json
+IVault.json
+IVoterProxy.json
+IWrappedVault.json
+Math.json
+Pausable.json
+Ownable.json
+SafeERC20.json
+SafeMath.json
+yERC20.json
+abi
